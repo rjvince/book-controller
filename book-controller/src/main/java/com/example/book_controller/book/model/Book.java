@@ -1,9 +1,6 @@
 package com.example.book_controller.book.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -25,6 +22,7 @@ public class Book {
     protected String title;
     @NotBlank(message = "Book author cannot be blank")
     protected String author;
+    @Column(unique = true)
     @NotBlank(message = "Book ISBN cannot be blank")
     protected String isbn;
     @NotNull
